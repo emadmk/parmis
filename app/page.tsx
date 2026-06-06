@@ -14,7 +14,7 @@ const orgJsonLd = {
   name: "طنین ارتباط پارمیس",
   alternateName: "Tanin Ertebat Parmis",
   url: "https://teparmis.ir",
-  logo: "https://teparmis.ir/apple-icon.svg",
+  logo: "https://teparmis.ir/brand/icon-256.png",
   email: "info@teparmis.ir",
   telephone: "+98-21-24871000",
   faxNumber: "+98-21-24871211",

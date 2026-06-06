@@ -134,7 +134,9 @@ export default function Contact() {
 
           <div className="flex flex-col items-center gap-4 sm:items-end">
             <div className="flex items-center gap-2.5">
-              {t.social.map((s) => {
+              {t.social
+                .filter((s) => s.href && s.href !== "#")
+                .map((s) => {
                 const Icon = socialIcon[s.icon];
                 return (
                   <a

@@ -71,7 +71,7 @@ export default function Clients() {
         </Reveal>
 
         {/* Certifications */}
-        <div id="certs" className="mt-28 scroll-mt-24">
+        <div id="certs" className="mt-28">
           <SectionHeading
             tag={t.certs.tag}
             title={t.certs.title}

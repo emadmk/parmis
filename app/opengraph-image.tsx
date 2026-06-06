@@ -1,10 +1,17 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const alt = "Tanin Ertebat Parmis — Telecom & SCADA Engineering";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OgImage() {
+export default async function OgImage() {
+  const logo = await readFile(
+    join(process.cwd(), "public/brand/logo-circle.png")
+  );
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -34,11 +41,8 @@ export default function OgImage() {
               fontSize: 34,
             }}
           >
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#050608" strokeWidth={2.4} strokeLinecap="round">
-              <path d="M5 13a9 9 0 0 1 14 0" />
-              <path d="M8 15.5a5 5 0 0 1 8 0" />
-              <circle cx="12" cy="18" r="1.3" fill="#050608" />
-            </svg>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={logoSrc} width={40} height={40} alt="Parmis" />
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ fontSize: 30, fontWeight: 700 }}>Parmis</span>

@@ -65,11 +65,11 @@ export default function ContactForm() {
       />
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <input name="name" placeholder={f.name} className={inputBase} autoComplete="name" />
-        <input name="email" type="email" placeholder={f.email} className={inputBase} dir="ltr" autoComplete="email" />
+        <input name="name" aria-label={f.name} placeholder={f.name} className={inputBase} autoComplete="name" required />
+        <input name="email" type="email" aria-label={f.email} placeholder={f.email} className={inputBase} dir="ltr" autoComplete="email" required />
       </div>
-      <input name="phone" placeholder={f.phone} className={inputBase} dir="ltr" inputMode="tel" autoComplete="tel" />
-      <textarea name="message" placeholder={f.message} rows={4} className={`${inputBase} resize-none`} />
+      <input name="phone" aria-label={f.phone} placeholder={f.phone} className={inputBase} dir="ltr" inputMode="tel" autoComplete="tel" />
+      <textarea name="message" aria-label={f.message} placeholder={f.message} rows={4} className={`${inputBase} resize-none`} required />
 
       <button
         type="submit"
