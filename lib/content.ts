@@ -52,12 +52,15 @@ export type SectionContent = {
     title: string;
     subtitle: string;
     industries: string[];
+    logosTitle: string;
   };
   certs: {
     tag: string;
     title: string;
     subtitle: string;
-    items: { title: string; issuer: string }[];
+    items: { title: string; issuer: string; image: string }[];
+    viewLabel: string;
+    closeLabel: string;
   };
   contact: {
     tag: string;
@@ -72,7 +75,21 @@ export type SectionContent = {
     emailLabel: string;
     email: string;
     registry: { label: string; value: string }[];
+    mapLabel: string;
+    form: {
+      title: string;
+      name: string;
+      email: string;
+      phone: string;
+      message: string;
+      send: string;
+      sending: string;
+      success: string;
+      error: string;
+      invalid: string;
+    };
   };
+  social: { label: string; href: string; icon: "linkedin" | "instagram" | "telegram" | "mail" }[];
   footer: {
     tagline: string;
     rights: string;
@@ -291,6 +308,7 @@ const fa: SectionContent = {
       "بانک و مؤسسات مالی",
       "محیط‌زیست و منابع طبیعی",
     ],
+    logosTitle: "بخشی از سازمان‌هایی که به ما اعتماد کرده‌اند",
   },
   certs: {
     tag: "گواهینامه‌ها و تقدیرنامه‌ها",
@@ -300,20 +318,26 @@ const fa: SectionContent = {
       {
         title: "پروانه خدمات مشاوره و طراحی",
         issuer: "سازمان تنظیم مقررات و ارتباطات رادیویی",
+        image: "/brand/certs/cra-radio.jpg",
       },
       {
         title: "گواهی رتبه‌بندی",
         issuer: "سازمان مدیریت و برنامه‌ریزی کشور",
+        image: "/brand/certs/grading.jpg",
       },
       {
         title: "ISO 9001 · 14001 · 18001",
         issuer: "سیستم مدیریت یکپارچه (IMS)",
+        image: "/brand/certs/iso.jpg",
       },
       {
-        title: "تقدیرنامه‌های متعدد",
+        title: "تقدیرنامه‌ها",
         issuer: "از کارفرمایان و صنایع همکار",
+        image: "/brand/certs/appreciation.jpg",
       },
     ],
+    viewLabel: "مشاهده گواهینامه",
+    closeLabel: "بستن",
   },
   contact: {
     tag: "تماس با ما",
@@ -333,7 +357,26 @@ const fa: SectionContent = {
       { label: "شماره ثبت", value: "۳۸۲۷۱۰" },
       { label: "کد اقتصادی", value: "۴۱۱۳۸۱۵۸۴۸۱۳" },
     ],
+    mapLabel: "موقعیت دفتر مرکزی",
+    form: {
+      title: "ارسال پیام",
+      name: "نام و نام خانوادگی",
+      email: "ایمیل",
+      phone: "شماره تماس (اختیاری)",
+      message: "پیام شما",
+      send: "ارسال پیام",
+      sending: "در حال ارسال…",
+      success: "پیام شما با موفقیت ارسال شد. به‌زودی با شما تماس می‌گیریم.",
+      error: "ارسال پیام ناموفق بود. لطفاً مستقیم با ایمیل info@teparmis.ir در تماس باشید.",
+      invalid: "لطفاً نام، ایمیل معتبر و متن پیام را وارد کنید.",
+    },
   },
+  social: [
+    { label: "LinkedIn", href: "#", icon: "linkedin" },
+    { label: "Instagram", href: "#", icon: "instagram" },
+    { label: "Telegram", href: "#", icon: "telegram" },
+    { label: "Email", href: "mailto:info@teparmis.ir", icon: "mail" },
+  ],
   footer: {
     tagline: "مهندسی ارتباطات صنعتی، فراتر از انتظار.",
     rights: "تمامی حقوق محفوظ است.",
@@ -552,6 +595,7 @@ const en: SectionContent = {
       "Banking & Finance",
       "Environment & Natural Resources",
     ],
+    logosTitle: "Some of the organizations that trust us",
   },
   certs: {
     tag: "Certifications & Awards",
@@ -561,20 +605,26 @@ const en: SectionContent = {
       {
         title: "Consulting & Design License",
         issuer: "Communications Regulatory Authority (CRA)",
+        image: "/brand/certs/cra-radio.jpg",
       },
       {
         title: "Grading Certificate",
         issuer: "Management & Planning Organization",
+        image: "/brand/certs/grading.jpg",
       },
       {
         title: "ISO 9001 · 14001 · 18001",
         issuer: "Integrated Management System (IMS)",
+        image: "/brand/certs/iso.jpg",
       },
       {
         title: "Letters of Appreciation",
         issuer: "From clients and partner industries",
+        image: "/brand/certs/appreciation.jpg",
       },
     ],
+    viewLabel: "View certificate",
+    closeLabel: "Close",
   },
   contact: {
     tag: "Contact",
@@ -594,7 +644,26 @@ const en: SectionContent = {
       { label: "Registration No.", value: "382710" },
       { label: "Economic Code", value: "411381584813" },
     ],
+    mapLabel: "Head office location",
+    form: {
+      title: "Send a message",
+      name: "Full name",
+      email: "Email",
+      phone: "Phone (optional)",
+      message: "Your message",
+      send: "Send message",
+      sending: "Sending…",
+      success: "Your message has been sent. We'll get back to you shortly.",
+      error: "Could not send your message. Please email info@teparmis.ir directly.",
+      invalid: "Please enter your name, a valid email and a message.",
+    },
   },
+  social: [
+    { label: "LinkedIn", href: "#", icon: "linkedin" },
+    { label: "Instagram", href: "#", icon: "instagram" },
+    { label: "Telegram", href: "#", icon: "telegram" },
+    { label: "Email", href: "mailto:info@teparmis.ir", icon: "mail" },
+  ],
   footer: {
     tagline: "Industrial communications engineering, beyond expectation.",
     rights: "All rights reserved.",

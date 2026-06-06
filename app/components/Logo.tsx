@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/lib/i18n";
 
 export default function Logo({ compact = false }: { compact?: boolean }) {
@@ -7,22 +8,15 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className="flex items-center gap-2.5 select-none" dir="ltr">
-      <span className="relative inline-flex h-8 w-8 items-center justify-center">
-        <span className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-accent to-accent-2 opacity-90" />
-        <span className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-accent to-accent-2 blur-md opacity-50" />
-        <svg
-          viewBox="0 0 24 24"
-          className="relative h-5 w-5 text-black"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 13a9 9 0 0 1 14 0" />
-          <path d="M8 15.5a5 5 0 0 1 8 0" />
-          <circle cx="12" cy="18" r="1.3" fill="currentColor" />
-        </svg>
+      <span className="relative inline-flex h-9 w-9 items-center justify-center">
+        <Image
+          src="/brand/logo-circle-white.png"
+          alt="Parmis"
+          width={36}
+          height={36}
+          className="h-8 w-8 object-contain"
+          priority
+        />
       </span>
       <span className="flex flex-col leading-none">
         <span className="text-[17px] font-semibold tracking-tight text-fg">
