@@ -47,3 +47,31 @@ lib/
 
 - **رنگ برند:** متغیرهای `--accent` و `--accent-2` در `app/globals.css`
 - **لوگو:** کامپوننت `app/components/Logo.tsx` (در حال حاضر لوگوتایپ متنی است)
+- **اطلاعات تماس / دامنه:** ایمیل و آدرس در `lib/content.ts` و دامنه‌ی `teparmis.ir`
+  در `app/layout.tsx`، `app/robots.ts`، `app/sitemap.ts` و `app/page.tsx`
+
+## استقرار / Deployment
+
+سایت پشت **ابرآروان (ArvanCloud)** قرار می‌گیرد؛ SSL در لبه (edge) توسط ابرآروان
+ترمینیت می‌شود و origin روی **HTTP** سرویس می‌دهد. آدرس‌های canonical و OpenGraph
+روی `https://teparmis.ir` تنظیم شده‌اند تا پیش‌نمایش‌ها و سئو درست باشند.
+
+دو روش برای origin:
+
+**۱) اجرای سرور Node (پیشنهادی):**
+
+```bash
+NODE_ENV=production npm run build
+NODE_ENV=production npm run start   # روی پورت 3000 و HTTP
+```
+
+سپس در پنل ابرآروان، رکورد دامنه را به IP/پورت این سرور اشاره دهید و گزینه‌ی
+HTTPS/SSL لبه را فعال کنید (origin روی HTTP باقی می‌ماند).
+
+**۲) خروجی کاملاً استاتیک (سرو با nginx روی لبه):**
+
+چون تمام صفحات استاتیک‌اند، می‌توان با افزودن `output: "export"` به `next.config.ts`
+یک پوشه‌ی `out/` تولید کرد و آن را مستقیماً با nginx/Apache سرو نمود.
+
+> توجه: این محیط `NODE_ENV` را روی `development` تنظیم کرده است؛ به همین دلیل در
+> دستورهای بالا `NODE_ENV=production` به‌صورت صریح آمده. روی سرور واقعی نیازی به آن نیست.

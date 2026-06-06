@@ -69,6 +69,8 @@ export type SectionContent = {
     phone: string;
     faxLabel: string;
     fax: string;
+    emailLabel: string;
+    email: string;
     registry: { label: string; value: string }[];
   };
   footer: {
@@ -324,6 +326,8 @@ const fa: SectionContent = {
     phone: "۰۲۱-۲۴۸۷۱۰۰۰",
     faxLabel: "فکس",
     fax: "۰۲۱-۲۴۸۷۱۲۱۱",
+    emailLabel: "ایمیل",
+    email: "info@teparmis.ir",
     registry: [
       { label: "شناسه ملی", value: "۱۰۳۲۰۳۱۰۷۴۵" },
       { label: "شماره ثبت", value: "۳۸۲۷۱۰" },
@@ -583,6 +587,8 @@ const en: SectionContent = {
     phone: "+98 21 2487 1000",
     faxLabel: "Fax",
     fax: "+98 21 2487 1211",
+    emailLabel: "Email",
+    email: "info@teparmis.ir",
     registry: [
       { label: "National ID", value: "10320310745" },
       { label: "Registration No.", value: "382710" },

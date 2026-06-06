@@ -4,7 +4,7 @@ import { useLanguage } from "@/lib/i18n";
 import { content } from "@/lib/content";
 import Reveal from "./Reveal";
 import Logo from "./Logo";
-import { PhoneIcon, PinIcon, PrinterIcon } from "./icons";
+import { MailIcon, PhoneIcon, PinIcon, PrinterIcon } from "./icons";
 
 export default function Contact() {
   const { lang } = useLanguage();
@@ -59,6 +59,14 @@ export default function Contact() {
                   label={t.contact.addressLabel}
                   value={t.contact.address}
                 />
+                <a href={`mailto:${t.contact.email}`} className="block">
+                  <ContactRow
+                    icon={<MailIcon className="h-5 w-5" />}
+                    label={t.contact.emailLabel}
+                    value={t.contact.email}
+                    interactive
+                  />
+                </a>
                 <a href="tel:+982124871000" className="block">
                   <ContactRow
                     icon={<PhoneIcon className="h-5 w-5" />}
