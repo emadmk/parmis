@@ -133,3 +133,44 @@ html[lang="fa"] body {
     scroll-behavior: auto;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   JS-independent entrance animations.
+   Content is visible by default; these only add motion. If the JS bundle
+   fails to run, the page still renders fully (never blank).
+--------------------------------------------------------------------------- */
+@keyframes parmis-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes parmis-scroll-dot {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.anim-fade-up {
+  animation: parmis-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anim-scroll-dot {
+  animation: parmis-scroll-dot 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up,
+  .anim-scroll-dot {
+    animation: none;
+  }
+}
